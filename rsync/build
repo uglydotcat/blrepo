@@ -13,7 +13,7 @@ export CFLAGS="-static $CFLAGS"
     --disable-zstd \
     --disable-lz4 \
     --without-included-zlib \
-	--without-openssl	
+	--disable-openssl	
 
 make
 make DESTDIR="$1" install
