@@ -8,7 +8,7 @@ patch -p1 < libressl.patch
 {
     mkdir -p "${cache_dir:=build/cache/2020-08-27}"
 
-    for tarball in *.tar.xz\?no-extract; do
+    for tarball in *.tar.gz\?no-extract; do
         mv -f "$tarball" "$cache_dir/${tarball%%\?no-extract}"
     done
 }
@@ -25,9 +25,9 @@ cat > config.toml <<EOF
 link-shared = true
 
 [build]
-build     = "x86_64-unknown-linux-musl"
-host      = [ "x86_64-unknown-linux-musl" ]
-target    = [ "x86_64-unknown-linux-musl" ]
+build     = "x86_64-unknown-linux-gnu"
+host      = [ "x86_64-unknown-linux-gnu" ]
+target    = [ "x86_64-unknown-linux-gnu" ]
 
 docs           = false
 compiler-docs  = false
@@ -54,7 +54,7 @@ debug-assertions  = false
 codegen-tests     = false
 codegen-units-std = 1
 
-[target.x86_64-unknown-linux-musl]
+[target.x86_64-unknown-linux-gnu]
 llvm-config = "/usr/bin/llvm-config"
 crt-static  = false
 EOF

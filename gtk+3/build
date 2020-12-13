@@ -22,6 +22,7 @@ sed -i 's/docs m4macros/m4macros/'          Makefile.am Makefile.in
     --enable-xcomposite \
     --enable-xdamage \
     --enable-x11-backend \
+    --enable-wayland-backend \
     --enable-debug=no \
     --disable-schemas-compile \
     --disable-cups \
