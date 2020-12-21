@@ -1,8 +1,0 @@
-libX11
-libXext
-libXfixes
-libdrm
-linux-headers make
-mesa
-meson         make
-pkgconf       make

@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+export CFLAGS="$CFLAGS -static"
+
+patch -p1 < M4-1.4.17_glibc_2.28.patch
+
+./configure \
+    --prefix=/usr
+
+make
+make DESTDIR="$1" install

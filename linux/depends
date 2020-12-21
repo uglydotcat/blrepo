@@ -1,4 +1,0 @@
-bison         make
-libelf
-linux-headers make
-perl          make
