@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --enable-image=x11,fb \
+    --with-imagelib=imlib2 \
+    --with-termlib=ncurses \
+    --disable-w3mmailer 
+
+make
+make DESTDIR="$1" install
